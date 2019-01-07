@@ -52,35 +52,3 @@ tasks {
         dependsOn(assembleWeb)
     }
 }
-
-
-/*
-
-
-allprojects {
-    buildscript {
-        dependencies {
-            compile(kotlin("stdlib-js"))
-        }
-        repositories {
-            jcenter()
-        }
-    }
-}
-
-subprojects {
-    plugins {
-        id("kotlin2js") version "1.3.10"
-    }
-
-
-    buildscript {
-
-        println("greetings from the root")
-
-    }
-}
-
-buildscript {
-    println("im root")
-}*/
