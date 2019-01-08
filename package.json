@@ -5,12 +5,16 @@
   "main": "build/web/output.js",
   "scripts": {
     "start": "node build/web/output.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node build/resources/test/full_test.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
     "kotlin": "^1.3.11"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "output": "file:build/resources/main/"
   }
 }
