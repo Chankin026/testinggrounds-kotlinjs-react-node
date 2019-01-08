@@ -17,6 +17,8 @@ tasks {
         kotlinOptions {
             outputFile = "${sourceSets.main.get().output.resourcesDir}/output.js"
             sourceMap = true
+            metaInfo = true
+            moduleKind = "commonjs"
         }
     }
     val unpackKotlinJsStdlib by registering {
