@@ -54,15 +54,15 @@ tasks {
 
         into("$buildDir/node_modules")
     }
-    val installJasmine by registering(NpmTask::class) {
-        setArgs(listOf("install", "jasmine"))
-    }
     val runJasmine by registering(NodeTask::class){
-        dependsOn(compileTestKotlin2Js, populateNodeModules, installJasmine)
+        dependsOn(compileTestKotlin2Js, populateNodeModules, npmInstall)
         setScript(file("node_modules/jasmine/bin/jasmine.js"))
         setArgs(listOf("$buildDir/jstest"))
     }
     test {
         dependsOn(runJasmine)
+    }
+    create("run", NpmTask::class){
+        setArgs(listOf("start"))
     }
 }
