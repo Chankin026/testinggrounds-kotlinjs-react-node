@@ -8,4 +8,6 @@ pluginManagement {
     }
 }
 
-include("backend")
+rootProject.name = "testinggrounds-kotlinjs-react-node"
+
+include("be-gradle")

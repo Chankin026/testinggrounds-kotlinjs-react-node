@@ -26,7 +26,7 @@ repositories {
 
 tasks {
     node {
-        download = true
+        download = false
     }
     compileKotlin2Js {
         kotlinOptions {
@@ -62,6 +62,9 @@ tasks {
     }
     test {
         dependsOn(runJasmine)
+    }
+    assemble {
+        dependsOn(clean)
     }
     create("run", NpmTask::class) {
         setArgs(listOf("start"))
