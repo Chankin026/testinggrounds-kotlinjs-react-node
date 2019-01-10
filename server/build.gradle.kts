@@ -65,4 +65,10 @@ tasks {
     create("serve", NpmTask::class){
         setArgs(listOf("run", "serve"))
     }
+    create("rebuild"){
+        val prodFiles = fileTree("src/main/kotlin")
+        prodFiles.include("**/*.kt")
+        this.inputs.files(prodFiles)
+        dependsOn(compileKotlin2Js)
+    }
 }

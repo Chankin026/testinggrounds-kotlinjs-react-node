@@ -5,9 +5,9 @@
 
 Run continuous
 ```bash
-# Terminal 1 - trigger rebuild
-./gradlew build -t
+# Terminal 1 - trigger rebuilds from code changes
+./gradlew rebuild -t --parallel
 
-# Terminal 2 - serve and relaunch node
+# Terminal 2 - serve and relaunch node server
 ./gradlew run
 ```

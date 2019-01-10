@@ -28,7 +28,6 @@ tasks {
         download = false
     }
     compileKotlin2Js {
-        //inputs.files("src/main/**/*.kt")
         kotlinOptions {
             moduleKind = "commonjs"
             destinationDir = file("$buildDir/js")
@@ -62,7 +61,10 @@ tasks {
     test {
         dependsOn(npmTest)
     }
-    assemble {
-        dependsOn(clean)
+    create("rebuild") {
+        val prodFiles = fileTree("src/main/kotlin")
+        prodFiles.include("**/*.kt")
+        this.inputs.files(prodFiles)
+        dependsOn(compileKotlin2Js)
     }
 }
