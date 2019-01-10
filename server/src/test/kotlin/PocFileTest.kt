@@ -18,7 +18,7 @@ class PocFileTest {
 
     @Ignore
     @Test
-    fun fail_every_time() {
+    fun failEveryTime() {
         fail()
     }
 }

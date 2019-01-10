@@ -29,7 +29,6 @@ tasks {
         download = false
     }
     compileKotlin2Js {
-        //inputs.files("src/main/**/*.kt")
         kotlinOptions {
             moduleKind = "commonjs"
             destinationDir = file("$buildDir/js")
@@ -63,8 +62,7 @@ tasks {
     test {
         dependsOn(npmTest)
     }
-    create("run", NpmTask::class) {
-        dependsOn(compileKotlin2Js)
+    create("serve", NpmTask::class){
         setArgs(listOf("run", "serve"))
     }
 }

@@ -1,7 +1,6 @@
 {
   "name": "client",
   "scripts": {
-    "serve": "node node_modules/nodemon/bin/nodemon -w build/js/client",
     "test": "echo \"Hellooo\"! #node node_modules/jasmine/bin/jasmine build/jstest"
   },
   "dependencies": {

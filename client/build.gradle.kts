@@ -65,8 +65,4 @@ tasks {
     assemble {
         dependsOn(clean)
     }
-    create("run", NpmTask::class) {
-        dependsOn(compileKotlin2Js)
-        setArgs(listOf("run", "serve"))
-    }
 }
