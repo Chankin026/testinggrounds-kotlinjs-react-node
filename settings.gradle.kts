@@ -10,4 +10,4 @@ pluginManagement {
 
 rootProject.name = "testinggrounds-kotlinjs-react-node"
 
-include("be-gradle")
+include("fe-node", "be-gradle")

@@ -7,7 +7,6 @@ buildscript {
         classpath("com.moowork.gradle:gradle-node-plugin:1.2.0")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.10")
     }
-    println("Hello from backend")
 }
 
 plugins {
