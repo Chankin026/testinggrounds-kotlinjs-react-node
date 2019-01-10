@@ -1,14 +1,14 @@
 external fun require(module: String): dynamic
 
 fun main(args: Array<String>) {
-    println("Hello JavaScript!")
+    println("Hello JavaScript! ${args.asList()}")
 
     val express = require("express")
     val app = express()
 
     app.get("/") { _, res ->
         res.type("text/plain")
-        res.send("i am a beautiful butterfly")
+        res.send("i am a beautiful butterfly!!!")
     }
 
     app.listen(3000) {

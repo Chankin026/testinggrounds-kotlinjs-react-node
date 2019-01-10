@@ -28,6 +28,7 @@ tasks {
         download = false
     }
     compileKotlin2Js {
+        //inputs.files("src/main/**/*.kt")
         kotlinOptions {
             moduleKind = "commonjs"
             destinationDir = file("$buildDir/js")
@@ -45,7 +46,7 @@ tasks {
     val populateNodeModules by registering(Copy::class) {
         group = "build"
         description = "Assemble the web application"
-        dependsOn("compileKotlin2Js")
+        dependsOn(compileKotlin2Js)
         from("$buildDir/js")
 
         configurations.testCompile.get().forEach {
@@ -54,9 +55,9 @@ tasks {
 
         into("$buildDir/node_modules")
     }
-    val npmTest by registering(Exec::class) {
+    val npmTest by registering(NpmTask::class) {
         dependsOn(compileTestKotlin2Js, populateNodeModules, npmInstall)
-        setCommandLine(listOf("npx", "jasmine", "$buildDir/jstest"))
+        setArgs(listOf("run", "test"))
     }
     test {
         dependsOn(npmTest)
@@ -65,6 +66,7 @@ tasks {
         dependsOn(clean)
     }
     create("run", NpmTask::class) {
-        setArgs(listOf("run", "start"))
+        dependsOn(compileKotlin2Js)
+        setArgs(listOf("run", "serve"))
     }
 }
