@@ -9,5 +9,5 @@ Run continuous
 ./gradlew rebuild -t --parallel
 
 # Terminal 2 - serve and relaunch node server
-./gradlew run
+./gradlew npmServe
 ```
