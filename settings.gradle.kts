@@ -8,6 +8,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "testinggrounds-kotlinjs-react-node"
-
-include("client", "server")
+rootProject.name = "server"

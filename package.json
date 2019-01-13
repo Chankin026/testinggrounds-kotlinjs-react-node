@@ -2,9 +2,9 @@
   "name": "server",
   "version": "1.0.0",
   "scripts": {
-    "start": "node build/js/server",
-    "serve": "node node_modules/nodemon/bin/nodemon -w build/js/server.js",
-    "test": "node node_modules/jasmine/bin/jasmine build/jstest"
+    "start": "node build/server.js",
+    "serve": "node node_modules/nodemon/bin/nodemon -w build/server.js",
+    "test": "node node_modules/jasmine/bin/jasmine build/test/*est.js"
   },
   "author": "",
   "license": "ISC",
